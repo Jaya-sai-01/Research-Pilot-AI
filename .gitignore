@@ -1,0 +1,30 @@
+# Virtual environments
+backend/venv/
+backend/.venv/
+venv/
+.venv/
+__pycache__/
+*.pyc
+
+# Environment files
+.env
+backend/.env
+frontend/.env
+
+# Databases & local data
+*.db
+backend/research_pilot.db
+data/
+backend/data/
+
+# Logs
+*.log
+backend/*.log
+frontend/*.log
+
+# Node modules & production builds
+node_modules/
+frontend/node_modules/
+frontend/dist/
+dist/
+.DS_Store

@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-slate-900 text-slate-200 font-sans antialiased overflow-x-hidden;
+    font-family: 'Inter', 'Outfit', sans-serif;
+    background-image: 
+      radial-gradient(at 0% 0%, rgba(109, 93, 246, 0.03) 0px, transparent 50%),
+      radial-gradient(at 100% 0%, rgba(139, 92, 246, 0.02) 0px, transparent 50%),
+      radial-gradient(at 50% 100%, rgba(16, 185, 129, 0.02) 0px, transparent 50%);
+    background-attachment: fixed;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Outfit', 'Inter', sans-serif;
+    letter-spacing: -0.015em;
+  }
+}
+
+/* Glassmorphism custom classes */
+.glass-panel {
+  @apply bg-slate-850 bg-opacity-80 backdrop-blur-md border border-slate-750 shadow-glass rounded-2xl transition-all duration-200;
+}
+
+.glass-panel-hover {
+  @apply hover:border-slate-700 hover:shadow-lg;
+}
+
+.glass-input {
+  @apply bg-slate-950 border border-slate-750 text-slate-100 placeholder:text-slate-500 rounded-xl py-2.5 px-4 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 transition-all duration-200 text-sm;
+}
+
+/* Component buttons */
+.btn-primary {
+  @apply bg-brand-500 hover:bg-brand-600 text-white font-semibold py-2 px-4 rounded-xl text-sm transition-all duration-200 cursor-pointer shadow-sm active:scale-[0.98] select-none flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed;
+}
+
+.btn-secondary {
+  @apply bg-slate-800 hover:bg-slate-750 border border-slate-750 hover:border-slate-700 text-slate-200 font-semibold py-2 px-4 rounded-xl text-sm transition-all duration-200 cursor-pointer active:scale-[0.98] select-none flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed;
+}
+
+.btn-danger {
+  @apply bg-red-950 bg-opacity-30 hover:bg-red-900 border border-red-900 border-opacity-40 text-red-200 hover:text-white font-semibold py-2 px-4 rounded-xl text-sm transition-all duration-200 cursor-pointer active:scale-[0.98] select-none flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-slate-900;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-800 rounded-full hover:bg-slate-700 transition-colors;
+}
+
+/* Keyframes and Animations */
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.06;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.1;
+    transform: scale(1.03);
+  }
+}
+
+.glow-bg {
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  background: radial-gradient(circle, rgba(109, 93, 246, 0.08) 0%, rgba(0,0,0,0) 70%);
+  filter: blur(50px);
+  animation: pulseGlow 15s infinite ease-in-out;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Tab button transitions */
+.tab-btn {
+  @apply px-4 py-2 text-xs font-semibold rounded-xl border border-transparent transition-all duration-200 cursor-pointer;
+}
+
+.tab-btn-active {
+  @apply bg-slate-800 border border-slate-750 text-white shadow-sm;
+}
+
+.tab-btn-inactive {
+  @apply text-slate-400 hover:text-slate-200 hover:bg-slate-800 hover:bg-opacity-40;
+}
